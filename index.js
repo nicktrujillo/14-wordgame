@@ -1,5 +1,4 @@
 import "./main.css";
-import "./game";
 import { commonWords } from "./constants.js";
 
 // PICK A RANDOM WORD CONTAINING 3 LETTERS OR MORE
@@ -24,7 +23,7 @@ for (let i = 0; i < word.length; i++) {
 document.querySelector("#dashes").innerHTML = answerArray.join(" ");
 
 // SET NUMBER OF TURNS
-let turns = 7;
+let turns = 10;
 document.querySelector("#turns").innerHTML = turns;
 
 // VARIABLE TO KEEP TRACK OF CORRECT GUESSES
@@ -34,6 +33,7 @@ let counter = 0;
 document.querySelector("#keyboard").addEventListener("click", (e) => {
   e.target.disabled = true;
   let guess = e.target.id;
+  //   document.querySelector("#guesses").innerHTML = `<li>${guess}</li>`;
   for (let j = 0; j < word.length; j++) {
     if (word[j] === guess) {
       answerArray[j] = guess;
